@@ -7,13 +7,13 @@ const ingredients = [
   "Condiments",
 ];
 
-const list = document.querySelector("#ingredients");
+const listEl = document.querySelector("#ingredients");
 
-for (const ingredient of ingredients) {
-  const item = document.createElement("li");
-  item.textContent = ingredient;
+const items = ingredients.map((ingredient) => {
+  const itemEl = document.createElement("li");
+  itemEl.textContent = ingredient;
+  itemEl.classList.add("item");
+  return itemEl;
+});
 
-  console.log(item);
-}
-
-// list.insertAdjacentElement("afterbegin", item);
+listEl.append(...items);
